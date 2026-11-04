@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spieler-HUD</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dev-bg">
+
+  <main class="hud">
+
+    <section class="bars">
+      <div class="bar bar--health" style="--value: 82">
+        <span class="bar__label">HP</span>
+        <div class="bar__track"><div class="bar__fill"></div></div>
+      </div>
+
+      <div class="bar bar--armor" style="--value: 45">
+        <span class="bar__label">RS</span>
+        <div class="bar__track"><div class="bar__fill"></div></div>
+      </div>
+
+      <div class="bar bar--hunger" style="--value: 65">
+        <span class="bar__label">HU</span>
+        <div class="bar__track"><div class="bar__fill"></div></div>
+      </div>
+
+      <div class="bar bar--thirst bar--low" style="--value: 12">
+        <span class="bar__label">DU</span>
+        <div class="bar__track"><div class="bar__fill"></div></div>
+      </div>
+    </section>
+
+    <section class="money">
+      <div class="money__row">
+        <span class="money__label">Bargeld</span>
+        <span class="money__value">$12.450</span>
+      </div>
+      <div class="money__row">
+        <span class="money__label">Bank</span>
+        <span class="money__value">$84.300</span>
+      </div>
+    </section>
+
+    <section class="job">
+      <span class="job__name">LSPD</span>
+      <span class="job__sep">|</span>
+      <span class="job__rank">Officer</span>
+    </section>
+
+  </main>
+
+</body>
+</html>

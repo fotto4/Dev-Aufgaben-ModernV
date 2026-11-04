@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="app" class="overlay" hidden>
+    <div id="window" class="window">
+
+      <header class="window__head">
+        <h1 id="title" class="title"></h1>
+        <span id="list-count" class="count" hidden></span>
+        <button id="close-btn" class="close-btn" type="button" aria-label="Schließen">&times;</button>
+      </header>
+
+      <section id="form-view" class="view">
+        <div class="field">
+          <span class="label">Kategorie</span>
+          <div id="categories" class="pills"></div>
+        </div>
+
+        <div id="target-field" class="field" hidden>
+          <label class="label" for="target">Server-ID des Spielers</label>
+          <input id="target" type="text" inputmode="numeric" maxlength="5" placeholder="z. B. 12" autocomplete="off">
+        </div>
+
+        <div class="field">
+          <div class="field__row">
+            <label class="label" for="text">Beschreibung</label>
+            <span id="counter" class="counter">0 / 300</span>
+          </div>
+          <textarea id="text" rows="6" placeholder="Beschreibe dein Anliegen (mindestens 10 Zeichen)"></textarea>
+        </div>
+
+        <div id="message" class="message" hidden role="status"></div>
+
+        <footer class="actions">
+          <button id="cancel-btn" class="btn btn--ghost" type="button">Abbrechen</button>
+          <button id="submit-btn" class="btn btn--primary" type="button">Absenden</button>
+        </footer>
+      </section>
+
+      <section id="list-view" class="view" hidden>
+        <div id="report-list" class="report-list"></div>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

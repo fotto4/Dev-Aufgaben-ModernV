@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>24/7 Shop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <button id="open-btn" class="dev-btn" type="button">Shop öffnen</button>
+
+  <div id="shop" class="shop" hidden>
+
+    <section class="detail">
+      <header>
+        <h1 id="sel-name" class="detail__title"></h1>
+        <div class="badges">
+          <span id="sel-cat" class="badge badge--accent"></span>
+          <span id="sel-price" class="badge"></span>
+        </div>
+      </header>
+
+      <div class="preview"><span id="sel-icon" class="preview__icon"></span></div>
+
+      <button id="add-btn" class="action-btn action-btn--ghost" type="button">In den Warenkorb</button>
+    </section>
+
+    <section class="cartcol">
+      <header class="cartcol__head">
+        <h2 class="label">Warenkorb</h2>
+        <span class="money">Bargeld <strong id="money"></strong></span>
+      </header>
+
+      <ul id="cart-list" class="cart-list"></ul>
+
+      <div id="message" class="message" hidden role="status"></div>
+    </section>
+
+    <footer class="footer">
+      <div class="field">
+        <span class="label">Menge</span>
+        <div class="stepper">
+          <button id="qty-dec" class="step-btn" type="button" aria-label="Weniger">&minus;</button>
+          <span id="qty-value" class="step-value"></span>
+          <button id="qty-inc" class="step-btn" type="button" aria-label="Mehr">+</button>
+          <button id="qty-max" class="step-btn step-btn--wide" type="button">MAX</button>
+        </div>
+      </div>
+      <div class="field">
+        <span class="label">Gesamt</span>
+        <strong id="total" class="total"></strong>
+      </div>
+      <button id="buy-btn" class="action-btn" type="button">Kaufen</button>
+    </footer>
+
+    <section class="catalog">
+      <div class="catalog__top">
+        <input id="search" type="search" placeholder="Suchen" autocomplete="off">
+        <button id="close-btn" class="close-btn" type="button" aria-label="Schließen">&times;</button>
+      </div>
+      <div id="filters" class="filters"></div>
+      <div id="catalog-list" class="catalog-list"></div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+:root {
+  --panel: rgba(23, 23, 22, 0.88);
+  --border: rgba(255, 255, 255, 0.08);
+  --track: #0b0c0b;
+  --badge: #2d2c2b;
+  --text: #eaeaea;
+  --muted: #8c8c8b;
+  --accent: #5b3798;
+  --accent-border: #542b9a;
+  --danger: #ff5c5c;
+  --success: #5fd68a;
+  --font: "Bahnschrift", "Roboto Condensed", "Arial Narrow", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: clamp(10px, 1.48vh, 32px);
+}
+
+body {
+  height: 100vh;
+  background: transparent;
+  font-family: var(--font);
+  color: var(--text);
+  overflow: hidden;
+}
+
+.dev-bg {
+  background: #2b3a4a url("gta-screenshot.jpg") center / cover no-repeat;
+}
+
+.hud {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  width: 21rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  padding: 1.1rem 1.2rem;
+  background: linear-gradient(180deg, rgba(27, 27, 26, 0.92), rgba(20, 20, 19, 0.92));
+  border: 1px solid var(--border);
+  border-radius: 0.7rem;
+  box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.5), inset 0 0.12rem 0 var(--accent);
+  backdrop-filter: blur(4px);
+}
+
+.bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.bar {
+  --color: #fff;
+  --value: 100;
+
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.bar__label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 1.6rem;
+  border-radius: 0.3rem;
+  background: var(--badge);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--color);
+}
+
+.bar__track {
+  flex: 1;
+  height: 0.65rem;
+  background: var(--track);
+  border: 1px solid var(--border);
+  border-radius: 0.4rem;
+  overflow: hidden;
+}
+
+.bar__fill {
+  height: 100%;
+  width: calc(var(--value) * 1%);
+  background: linear-gradient(90deg, var(--color), var(--color));
+  border-radius: 0.4rem;
+  box-shadow: 0 0 0.6rem -0.1rem var(--color);
+  transition: width 0.3s ease;
+}
+
+.bar--health { --color: #ff5c5c; }
+.bar--armor  { --color: #4c8bf5; }
+.bar--hunger { --color: #f5a524; }
+.bar--thirst { --color: #2dd4bf; }
+
+.bar--low .bar__label {
+  color: var(--danger);
+  background: #2e1e1d;
+}
+
+.bar--low .bar__fill {
+  background: var(--danger);
+  animation: pulse 0.9s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 0 rgba(255, 92, 92, 0);
+  }
+  50% {
+    opacity: 0.45;
+    box-shadow: 0 0 0.9rem rgba(255, 92, 92, 0.95);
+  }
+}
+
+.money {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.7rem 0.8rem;
+  background: #1a1a19;
+  border: 1px solid var(--border);
+  border-radius: 0.4rem;
+}
+
+.money__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.money__label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.money__value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--success);
+}
+
+.job {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.job__name {
+  padding: 0.1rem 0.6rem;
+  border-radius: 0.25rem;
+  background: var(--accent);
+  border: 1px solid var(--accent-border);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.job__sep {
+  color: var(--muted);
+}
+
+.job__rank {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
